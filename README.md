@@ -105,8 +105,3 @@ override fun shouldOverrideUrlLoading(webview: WebView?, url: String?): Boolean
 * 实现成本较高；
 * 回调方式需要自行定义；
 
-### 参考链接：
-
-http://blog.csdn.net/sbsujjbcy/article/details/50752595
-https://juejin.im/post/58cdeba62f301e007e4af7e6
-https://github.com/chemdemo/chemdemo.github.io/issues/12
