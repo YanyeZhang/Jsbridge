@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.life.hybriddemo"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        ext.kotlin_version = "1.1.2"
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.anko:anko-sdk15:0.9.1" // So here it's 15 too
+    compile "org.jetbrains.anko:anko-appcompat-v7:0.9.1"
+    compile "org.jetbrains.anko:anko-design:0.9.1"
+    compile "org.jetbrains.anko:anko-recyclerview-v7:0.9.1"
+
+}
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {url 'https://dl.bintray.com/jetbrains/anko'} //这是你需要加入的
+}
